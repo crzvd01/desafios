@@ -7,8 +7,16 @@ public abstract class StringFormatter {
 
     private Integer limit;
 
-    public StringFormatter() {
-        this.limit = 40;
+    public Integer getLimit() {
+		return limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
+
+	public StringFormatter() {
+        this.setLimit(40);
     }
 
     /**
@@ -17,5 +25,5 @@ public abstract class StringFormatter {
      * @param text
      * @return
      */
-    public abstract String format(String text);
+    public abstract String format(String text, Integer limite, Boolean justify);
 }

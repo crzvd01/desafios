@@ -33,19 +33,22 @@ public class Main {
                 break;
         }
 
-        // Print input data
-        System.out.println("Inputs: ");
-        System.out.println("Text: " + text);
-        System.out.println("Limit: " + limit);
-        System.out.println("Should justify: " + justify);
-        System.out.println("=========================");
-
-        // Run IdwallFormatter
         final StringFormatter sf = new IdwallFormatter();
-        String outputText = sf.format(text);
+        if (limit > sf.getLimit()){
+        	System.out.println("Limite desejado maior que o limite permitido");
+        } else {
+        	 // Print input data
+            System.out.println("Inputs: ");
+            System.out.println("Text: " + text);
+            System.out.println("Limit: " + limit);
+            System.out.println("Should justify: " + justify);
+            System.out.println("=========================");
+            String outputText = sf.format(text, limit, justify);
 
-        // Print output text
-        System.out.println("Output: ");
-        System.out.println(outputText);
+            // Print output text
+            System.out.println("Output: ");
+            System.out.println(outputText);
+        }
+
     }
 }
